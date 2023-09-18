@@ -1,5 +1,5 @@
 /**
- * LOOP while
+ * LOOP
  * while ➡️ 如果条件不满足则输出0次
  * do...while ➡️ 至少输出一次
  */
