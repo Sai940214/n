@@ -1,10 +1,12 @@
 /**
  * LOOP
- * while ➡️ 如果条件不满足则输出0次
- * do...while ➡️ 至少输出一次
+ * while ➡️ Condition is checked before the code is run.
+ * 先条件检查再进行输出
+ * do...while ➡️ Condition is checked after the code is run.
+ * 先输出一次再检查条件
  */
 
-// 输出五次输入者的名字
+// Test：输出五次输入者的名字
 // ask writer to enter their name
 process.stdout.write("Please write your name: ")
 //Read user input
