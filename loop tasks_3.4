@@ -1,0 +1,28 @@
+// 3.4 Task 4: Multiplication Table
+//Ask the user to enter a number
+//print out corresponding multiplication table using a loop.
+// Try to make printing according to screenshot on the right. You might use 
+//util.format, padStart() and padEnd() to achieve this.
+
+
+//  Ask the user to enter a number
+process.stdout.write(" Enter a number : ")
+    //read user input
+    process.stdin.on('data', function(data){
+    let number = data.toString().trim();
+
+    process.stdout.write(" Multiplication table for " + number + "\n")
+    console.log("\n".padStart(30, '*'));
+    
+    //Loop through the string 
+    let i = Number(1);
+    while  (i <= 10){
+        process.stdout.write(
+            //你需要先把数字变成字符串，然后再使用padStart/padEnd
+            "*" + i.toString().padStart(10," ") + " * " + number + " = " + (i * number).toString().padEnd(10," ") + "*" + "\n" )
+        i++;
+    }
+    
+    console.log("\n".padEnd(30, '*'));
+process.exit()
+})
