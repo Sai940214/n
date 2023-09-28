@@ -1,0 +1,33 @@
+//Task 4.2
+//Create a program that keeps asking the user to input numbers. 
+//These numbers are stored in an array. 
+//Keep asking till zero is entered. 
+//After that the numbers are printed out in a reverse order. 
+//Don’t use array methods for this but only simple loops
+
+
+process.stdout.write("Enter a number: ");
+const numbers = [];
+//创建了一个名为 numbers 的常量数组（Array），并初始化为空数组。
+//在 JavaScript 中，const 是用来声明常量的关键字，一旦定义，就不能再重新赋值给 numbers。
+
+process.stdin.on("data", function(inputFromUser) {
+  const number = Number(inputFromUser);
+
+  if (!isNaN(number)) {
+//if (!isNaN(number)) 检查变量 number 是否不是一个 NaN（Not-a-Number）。
+    numbers.push(number);
+    if (number === 0) {
+      console.log("Numbers in reverse order:");
+      for (let i = numbers.length - 1; i >= 0; i--) {
+        console.log(numbers[i]);
+      }
+      process.exit();
+    } else {
+      process.stdout.write("Enter a number: ");
+    }
+  } else {
+    console.log("Invalid input. Please enter a valid number.");
+    process.stdout.write("Enter a number: ");
+  }
+});
