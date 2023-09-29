@@ -1,0 +1,24 @@
+//4.3
+//Create a program that asks user for number and 
+//calculates the average for them. 
+//Numbers will be asked till the user enters a letter.
+//Hint! You can check whether a value is numeric with isNaN().
+
+process.stdout.write("Enter a number: ");
+const numbers = [];
+
+process.stdin.on("data", function(inputFromUser) {
+    const number = Number(inputFromUser);
+  
+if(!isNaN(number)){
+    numbers.push(number);
+    process.stdout.write("Enter a number: ")
+}
+else {
+    const sum = numbers.reduce((acc, num) => acc + num, 0);
+    const average = sum / numbers.length;
+    console.log("Average of numbers : " + average)
+    process.exit()
+}
+
+})
